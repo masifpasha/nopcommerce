@@ -1,0 +1,18 @@
+****** inorder to push code from local to remote repo *****
+right click form your project folder and open 'git bash'
+git init --> to initialize local git repo
+git remote add origin https://github.com/masifpasha/nopcommerce.git -> connect local to remote repo
+git config --global user.name "masifpasha" --> mostly for first time for your project
+git config user.name "masifpasha@gmail.com" --> mostly for first time for your project
+git status --> to see a list of all local directory, what is commited into git or not (these are untracked if they are not in staging area)
+git all -A --> to add all data from your local directory to staging area
+git status
+git commit -m "comment for first time" --> commit to local repo
+git status
+git push -u origin master
+now, you can see all the code in github repository.
+so all the code is pushed to git remote repo
+
+***** for getting data from remote to local repo :*******
+git pull
+get add - A
