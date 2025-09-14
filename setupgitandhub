@@ -1,3 +1,4 @@
+----------------------------------------------------------
 ****** inorder to push code from local to remote repo *****
 right click form your project folder and open 'git bash'
 git init --> to initialize local git repo
@@ -15,4 +16,8 @@ so all the code is pushed to git remote repo
 
 ***** for getting data from remote to local repo :*******
 git pull
-get add - A
+
+*** again if you want to push to remote repo
+git add - A
+git commit -m "comment"
+git push -u origin master
