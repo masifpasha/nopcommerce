@@ -1,0 +1,91 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Start WebDriver (ensure you have chromedriver in your PATH)
+driver = webdriver.Chrome()
+
+# Open the Dribbble search page
+driver.get("https://admin-demo.nopcommerce.com/admin/")
+
+# Wait for the page and input field to load
+link_login_xpath = "//button[@type='submit']"
+element_login = driver.find_element(By.XPATH, link_login_xpath)
+element_login.click()
+time.sleep(3)
+
+link_customer_menu_xpath = "//a[@href='#']//p[contains(text(),'Customers')]"
+element_customer = driver.find_element(By.XPATH, link_customer_menu_xpath)
+element_customer.click()
+time.sleep(3)
+
+link_again_customer_menu_xpath = "//a[@href='/Admin/Customer/List']//p[contains(text(),'Customers')]"
+element_again_customer = driver.find_element(By.XPATH, link_again_customer_menu_xpath)
+element_again_customer.click()
+
+
+# Find the search input using placeholder
+#search_xpath = "//input[contains(@placeholder,'looking')]"
+#search_element = driver.find_element(By.XPATH, search_xpath)
+link_add_button_xpath = "//div[@class='float-right']//a[@class='btn btn-primary']"
+element_add_button = driver.find_element(By.XPATH, link_add_button_xpath)
+element_add_button.click()
+time.sleep(10)
+
+link_newsletter_xpath = "//ul[@class='select2-selection__rendered']//input[@type='search']"
+elements = driver.find_elements(By.XPATH, link_newsletter_xpath)
+elements[0].click()
+time.sleep(3)
+elements[0].send_keys('n')
+elements[0].send_keys(Keys.ENTER)
+time.sleep(10)
+
+link_registered_role = "//ul[@class='select2-selection__rendered']//li[@title='Registered']"
+link_registered_role_xpath = driver.find_element(By.XPATH, link_registered_role)
+
+time.sleep(10)
+delete_role = "//li[@class='select2-selection__choice']//span"
+link_delete_role_xpath = driver.find_element(By.XPATH, delete_role)
+link_delete_role_xpath.click()
+
+elements[1].clear()
+#elements[1].send_keys(Keys.CONTROL + "a")
+elements[1].send_keys('Administrators')
+elements[1].send_keys(Keys.ENTER)
+time.sleep(3)
+link_registered_role_xpath.click()
+time.sleep(3)
+elements[1].send_keys(Keys.ENTER)
+time.sleep(10)
+
+'''
+link_newsletter_xpath = "//ul[@class='select2-selection__rendered']//input[@type='search']"
+element_newsletter_xpath = driver.find_element(By.XPATH, link_newsletter_xpath)
+element_newsletter_xpath.click()
+time.sleep(3)
+element_newsletter_xpath.send_keys('n')
+element_newsletter_xpath.send_keys(Keys.ENTER)
+time.sleep(10)
+
+
+#link_customer_role_xpath = "//ul[@class='select2-selection__rendered']//li[@title='Registered']"
+link_customer_role_xpath = ("customer-info > div.card-body > div:nth-child(9) > div.col-md-9 >"
+                            "> div.input-group > div) > span > span.selection > span > ul > li > input"
+#link_customer_role_xpath = "//input[@aria-invalid='false']"
+customer_role_element_xpath = driver.find_element(By.CSS_SELECTOR, link_customer_role_xpath)
+#customer_role_element_xpath.send_keys('Registered')
+#customer_role_element_xpath.send_keys(Keys.ENTER)
+time.sleep(10)
+#customer_role_element_xpath.send_keys('Guests')
+#customer_role_element_xpath.send_keys(Keys.ENTER)
+#time.sleep(3)
+
+# Select all text and delete before entering new value
+#search_element.send_keys(Keys.CONTROL + "a")
+#search_element.send_keys(Keys.DELETE)
+'''
+# Wait to see the result (for demonstration)
+
+# Close the browser
+driver.quit()

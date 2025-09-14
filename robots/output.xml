@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-09-14T08:34:21.189674" rpa="false" schemaversion="5">
+<suite id="s1" name="R001" source="C:\Users\HEADWAY\PycharmProjects\Selenium\nopcommerce\robots\r001.robot">
+<test id="s1-t1" name="Wait Example" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-14T08:34:22.642376" level="INFO">Opening browser 'edge' to base url 'https://www.example.com'.</msg>
+<arg>https://www.example.com</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-14T08:34:22.641986" elapsed="23.690472"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-14T08:34:56.335771" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-14T08:34:46.334500" elapsed="10.001505"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-14T08:34:56.336856" elapsed="2.554869"/>
+</kw>
+<status status="PASS" start="2025-09-14T08:34:22.640332" elapsed="36.251923"/>
+</test>
+<status status="PASS" start="2025-09-14T08:34:21.193269" elapsed="37.700133"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="R001" id="s1" pass="1" fail="0" skip="0">R001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
